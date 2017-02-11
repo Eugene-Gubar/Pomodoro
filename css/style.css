@@ -1,14 +1,27 @@
-* {
-  border: 1px solid #ccc;
+body {
+  background-color: #090e1d;
+  margin: 0px;
+  padding: 0px;
 }
 
 .flexbox-container {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    align-items: center;
-    height: 100vh;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  margin: auto;
+}
+.time {
+  font-size: 25vw;
+  font-family: monospace;
+  color: #fff;
+  margin: 0px;
+  padding: 0px;
 }
