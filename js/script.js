@@ -28,7 +28,32 @@ function flatColor() {
     { name: "asbestos",      rgb: "127, 140, 141", hex: "#7f8c8d" }
   ];
 
-  var hexColor = flatColors[getRandomInt(0, flatColors.length + 1)].hex;
-  
+  // var randG = flatColors[getRandomInt(0, flatColors.length)].hex;
+
+  // $('body').css('background-color', hexColor);
+  $.getJSON("https://raw.githubusercontent.com/Eugene-Gubar/FlatColors/master/js/gradients.json", function(json) {
+    // var randG = getRandomInt(0, json.length);
+    var i = 38;
+    function setCssGradient(i) {
+      $('body').css({
+        background: "-webkit-linear-gradient(to left, " + json[i].colors[0] +  ", "  + json[i].colors[1] +")",
+        background: "-o-linear-gradient(to left, " + json[i].colors[0] +  ", "  + json[i].colors[1] +")",
+        background: "-moz-linear-gradient(to left, " + json[i].colors[0] +  ", "  + json[i].colors[1] +")",
+        background: "linear-gradient(to left, " + json[i].colors[0] +  ", "  + json[i].colors[1] +")"
+      });
+    }
+    setCssGradient(i);
+    $('body').keydown(function(e) {
+      if(e.which == 37) { // left
+        i <= 0 ? i = 0 : i -= 1;
+        setCssGradient(i);
+      }
+      else if(e.which == 39) { // right
+        i >= json.length - 1 ? i = i : i += 1;
+        setCssGradient(i);
+      }
+    });
+  });
 
 }
+flatColor();
