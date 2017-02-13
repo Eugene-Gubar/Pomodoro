@@ -21,21 +21,35 @@ body {
   font-family: sans-serif;
 }
 .time {
-  font-size: 25vw;
+  font-size: 35vw;
   margin: 0px;
   padding: 0px;
   cursor: pointer;
 }
+
 .options {
-  font-size: 2vw;
+  font-size: 3.5vw;
+}
+.options > div > p {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
 }
 .options span {
-  font-size: 5vw;
+  font-size: 7vw;
+}
+
+.break-minus, .break-plus, .session-minus, .session-plus {
+  cursor: pointer;
+}
+.break-minute, .session-minute {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
 .break-length {
   text-align: center;
   float: left;
 }
+
 .session-length {
   text-align: center;
   float: right;
