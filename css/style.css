@@ -1,5 +1,6 @@
 body {
   background-color: #090e1d;
+  color: #fff;
   margin: 0px;
   padding: 0px;
 }
@@ -17,11 +18,25 @@ body {
 
 .clock {
   margin: auto;
+  font-family: sans-serif;
 }
 .time {
   font-size: 25vw;
-  font-family: monospace;
-  color: #fff;
   margin: 0px;
   padding: 0px;
+  cursor: pointer;
+}
+.options {
+  font-size: 2vw;
+}
+.options span {
+  font-size: 5vw;
+}
+.break-length {
+  text-align: center;
+  float: left;
+}
+.session-length {
+  text-align: center;
+  float: right;
 }
