@@ -28,6 +28,7 @@ body {
 
 .options {
   font-size: 3.5vw;
+  width: 88vw;
 }
 .options > div > p {
   margin-top: 0.2em;
