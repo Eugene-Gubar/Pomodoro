@@ -53,17 +53,35 @@ function gradients() {
  * Function timer set break and session
  * @param {number} s - interval session seconds
  */
-var number = 0;
+var number = 0, interval;
 function timer() {
   $('.time').click(function (e) {
     e.preventDefault();
-    setInterval(function () { $('.second').text(number += 1); }, 1000);
+    interval = setInterval(function () { eHandlerTime (); }, 1000);
   });
 }
 timer();
 
+function eHandlerTime() {
+  // $('.second').text(sessionLength -= 1);
+  console.log(sessionLength);
+  if (sessionLength <= 0) {
+    stopTime();
+  } else {
+    $('.second').text(sessionLength -= 1);
+  }
+}
 
-/*function break(b) {
+function stopTime() {
+  clearInterval(interval);
+}
+
+/*
+
+function session(s) {
+
+}
+function break(b) {
 
 }
 
