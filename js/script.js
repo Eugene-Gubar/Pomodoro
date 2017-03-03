@@ -3,7 +3,10 @@
 // POMODORO
 // =============================================================================
 
-var breakLength = 5, sessionLength = 25;
+var breakLength = 5,
+    sessionLength = 25,
+    interval;
+
 var objMinSec = {
   minutes: 25,
   seconds: 00
@@ -53,14 +56,17 @@ function gradients() {
  * Function timer set break and session
  * @param {number} s - interval session seconds
  */
-var number = 0, interval;
 function timer() {
-  $('.time').click(function (e) {
+  $('.time').on('click', function (e) {
     e.preventDefault();
-    interval = setInterval(function () { eHandlerTime (); }, 1000);
+    if (interval >= 1) {
+      stopTime();
+      interval = 0;
+    } else {
+      interval = setInterval(function () { eHandlerTime (); }, 1000);
+    }
   });
 }
-timer();
 
 function eHandlerTime() {
   // $('.second').text(sessionLength -= 1);
@@ -68,7 +74,7 @@ function eHandlerTime() {
   if (sessionLength <= 0) {
     stopTime();
   } else {
-    $('.second').text(sessionLength -= 1);
+    $('.second').text(('0' + (sessionLength -= 1)).slice(-2));
   }
 }
 
@@ -90,3 +96,4 @@ function click() {
 }*/
 
 gradients();
+timer();
