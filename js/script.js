@@ -19,7 +19,7 @@ $(document).ready(function () {
       interval;
 
     /**
-     * Function getRandomInt is not yet used. Maybe future will used
+     * Function getRandomInt - randomly selects a number from the range
      * @param   {number} min 
      * @param   {number} max 
      * @returns {number} return random int number 
