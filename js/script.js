@@ -49,12 +49,10 @@ $(document).ready(function () {
           if (e.which == 37) { // left
             i <= 0 ? i = 0 : i -= 1;
             setCssGradient(i);
-            console.log(i);
           }
           else if (e.which == 39) { // right
             i >= json.length - 1 ? i = i : i += 1;
             setCssGradient(i);
-            console.log(i);
           }
         });
       });
