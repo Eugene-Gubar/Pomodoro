@@ -163,6 +163,9 @@ function breakSession(b) {
   startTimer(b * 60, $('.time'), true);
 }
 
+/**
+ * Function alarmSound - play sound finish break and session
+ */
 function alarmSound() {
   var audio = new Audio('./sound/bell_ring.mp3');
   audio.play();
