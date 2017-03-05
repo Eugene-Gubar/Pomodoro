@@ -118,6 +118,7 @@ function clickTimer() {
  * Function startTimer initialize start seconds count and display in DOM
  * @param {number} seconds - set seconds
  * @param {obj} element - set tag element $() selector
+ * @param {bool} b - optional argument for set breakSession
  */
 function startTimer(seconds, element, b) {
   var minutes, seconds, timer = seconds;
