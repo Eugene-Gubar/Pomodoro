@@ -32,9 +32,10 @@ $(document).ready(function () {
      * Function gradients - set background flat gradient color and realize even keyPress button <left, right>
      */
     function gradients() {
-
+      // A few gradients for random initialization
+      var grd = [74, 51, 45, 44, 35, 160, 137];
       $.getJSON("https://raw.githubusercontent.com/Eugene-Gubar/FlatColors/master/js/gradients.json", function (json) {
-        var i = 38;
+        var i = grd[getRandomInt(0, grd.length)];
         function setCssGradient(i) {
           $('body').css({
             background: "-webkit-linear-gradient(to left, " + json[i].colors[0] + ", " + json[i].colors[1] + ")",
@@ -48,10 +49,12 @@ $(document).ready(function () {
           if (e.which == 37) { // left
             i <= 0 ? i = 0 : i -= 1;
             setCssGradient(i);
+            console.log(i);
           }
           else if (e.which == 39) { // right
             i >= json.length - 1 ? i = i : i += 1;
             setCssGradient(i);
+            console.log(i);
           }
         });
       });
