@@ -3,14 +3,9 @@
 // POMODORO
 // =============================================================================
 
-var breakLength = 5,
-    sessionLength = 25,
-    interval;
-
-var objMinSec = {
-  minutes: 25,
-  seconds: 00
-};
+var breakLengthMin = 5,
+  sessionLengthMin = 25,
+  interval;
 
 /**
  * Function getRandomInt is not yet used. Maybe future will used
@@ -53,29 +48,41 @@ function gradients() {
 }
 
 /**
- * Function timer set break and session
+ * Function clickTimer set break and session
  * @param {number} s - interval session seconds
  */
-function timer() {
+function clickTimer() {
   $('.time').on('click', function (e) {
     e.preventDefault();
     if (interval >= 1) {
       stopTime();
       interval = 0;
     } else {
-      interval = setInterval(function () { eHandlerTime (); }, 1000);
+      startTimer(sessionLengthMin * 60, $('.time'));
     }
   });
 }
 
-function eHandlerTime() {
-  // $('.second').text(sessionLength -= 1);
-  console.log(sessionLength);
-  if (sessionLength <= 0) {
-    stopTime();
-  } else {
-    $('.second').text(('0' + (sessionLength -= 1)).slice(-2));
-  }
+/**
+ * Function startTimer initialize start seconds count and display in DOM
+ * @param {number} seconds - set seconds
+ * @param {obj} element - set tag element $() selector
+ */
+function startTimer(seconds, element) {
+  var minutes, seconds, timer = seconds;
+  interval = setInterval(function () {
+    minutes = parseInt(timer / 60, 10)
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    element.text(minutes + ":" + seconds);
+
+    if (--timer < 0) {
+      timer = seconds;
+    }
+  }, 1000);
 }
 
 function stopTime() {
@@ -84,9 +91,11 @@ function stopTime() {
 
 /*
 
-function session(s) {
-
+function min(m) {
+  seconds = m * 60;
 }
+
+
 function break(b) {
 
 }
@@ -96,4 +105,4 @@ function click() {
 }*/
 
 gradients();
-timer();
+clickTimer();
