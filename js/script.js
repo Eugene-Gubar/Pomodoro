@@ -138,8 +138,10 @@ function startTimer(seconds, element, b) {
       if (b === true) {
         stopTime();
         interval = 0;
+        alarmSound();
       } else {
         breakSession(breakLengthMin);
+        alarmSound();
       }
     }
   }, 1000);
@@ -159,6 +161,11 @@ function stopTime() {
  */
 function breakSession(b) {
   startTimer(b * 60, $('.time'), true);
+}
+
+function alarmSound() {
+  var audio = new Audio('./sound/bell_ring.mp3');
+  audio.play();
 }
 
 gradients();
