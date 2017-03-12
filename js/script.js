@@ -4,14 +4,11 @@
 // =============================================================================
 
 
-// =============================================================================
-// Function fully loaded DOM
-// =============================================================================
 $(document).ready(function () {
 
-  // ===========================================================================
-  // Anonymous function 'safe scope'
-  // ===========================================================================
+
+  /* --------------------------------- Anonymous function 'safe scope' ---------------------------------*/
+
   (function () {
 
     var breakLengthMin = 5,
@@ -64,9 +61,7 @@ $(document).ready(function () {
      * @param {number} s - interval session seconds
      */
     function clickTimer() {
-      // ===========================================================================
-      // click main time
-      // ===========================================================================
+
       $('.time').on('click', function (e) {
         e.preventDefault();
         if (interval >= 1) {
@@ -76,9 +71,7 @@ $(document).ready(function () {
           startTimer(sessionLengthMin * 60, $('.time'));
         }
       });
-      // ===========================================================================
-      // click break length - plus
-      // ===========================================================================
+      /* --------------------------------- click break length - plus ---------------------------------*/
       $('.break-plus').on('click', function (e) {
         e.preventDefault();
         if (breakLengthMin === 60) {
@@ -88,9 +81,7 @@ $(document).ready(function () {
         }
         $('.break-minute').text(breakLengthMin);
       });
-      // ===========================================================================
-      // click break length - minus
-      // ===========================================================================
+      /* --------------------------------- click break length - minus ---------------------------------*/
       $('.break-minus').on('click', function (e) {
         e.preventDefault();
         if (breakLengthMin === 1) {
@@ -100,9 +91,7 @@ $(document).ready(function () {
         }
         $('.break-minute').text(breakLengthMin);
       });
-      // ===========================================================================
-      // click session length - plus
-      // ===========================================================================
+      /* --------------------------------- click session length - plus ---------------------------------*/
       $('.session-plus').on('click', function (e) {
         e.preventDefault();
         if (sessionLengthMin === 120) {
@@ -112,9 +101,7 @@ $(document).ready(function () {
         }
         $('.session-minute').text(sessionLengthMin);
       });
-      // ===========================================================================
-      // click session length - minus
-      // ===========================================================================
+      /* --------------------------------- click session length - minus ---------------------------------*/
       $('.session-minus').on('click', function (e) {
         e.preventDefault();
         if (sessionLengthMin === 1) {
