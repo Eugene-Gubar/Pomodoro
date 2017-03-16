@@ -127,7 +127,7 @@ $(document).ready(function () {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-
+        
         element.text(minutes + ":" + seconds);
 
         if (--timer < 0) {
