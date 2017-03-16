@@ -36,9 +36,9 @@ $(document).ready(function () {
         function setCssGradient(i) {
           $('body').css({
             background: "-webkit-linear-gradient(to left, " + json[i].colors[0] + ", " + json[i].colors[1] + ")",
-            background: "-o-linear-gradient(to left, " + json[i].colors[0] + ", " + json[i].colors[1] + ")",
-            background: "-moz-linear-gradient(to left, " + json[i].colors[0] + ", " + json[i].colors[1] + ")",
-            background: "linear-gradient(to left, " + json[i].colors[0] + ", " + json[i].colors[1] + ")"
+            background: "-o-linear-gradient(to left, "      + json[i].colors[0] + ", " + json[i].colors[1] + ")",
+            background: "-moz-linear-gradient(to left, "    + json[i].colors[0] + ", " + json[i].colors[1] + ")",
+            background: "linear-gradient(to left, "         + json[i].colors[0] + ", " + json[i].colors[1] + ")"
           });
         }
         setCssGradient(i);
@@ -127,7 +127,7 @@ $(document).ready(function () {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        
+
         element.text(minutes + ":" + seconds);
 
         if (--timer < 0) {
