@@ -1,0 +1,55 @@
+
+body {
+  background: -webkit-gradient(linear, right top, left top, from(rgb(75, 108, 183)), to(rgb(24, 40, 72)));
+  background: -webkit-linear-gradient(right, rgb(75, 108, 183), rgb(24, 40, 72));
+  background: -moz-linear-gradient(right, rgb(75, 108, 183), rgb(24, 40, 72));
+  background: -o-linear-gradient(right, rgb(75, 108, 183), rgb(24, 40, 72));
+  background: linear-gradient(to left, rgb(75, 108, 183), rgb(24, 40, 72));
+  color: #fff;
+  margin: 0px;
+  padding: 0px;
+}
+
+.flexbox-container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+       align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  margin: auto;
+  font-family: sans-serif;
+}
+.time {
+  font-size: 35vw;
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+}
+.button {
+    width: 88vw;
+    text-align: center;
+}
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+    font-size: 5vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
