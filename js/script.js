@@ -1,32 +1,28 @@
-
-// =============================================================================
-// POMODORO
-// =============================================================================
+/**
+ * Pomodoro: Was created by Jquery
+ * Author:   Eugene Gubar
+ */
 
 
 $(document).ready(function () {
 
 
-  /* --------------------------------- Anonymous function 'safe scope' ---------------------------------*/
+
+  /* ------------------------------- Anonymous [function 'safe scope'] ------------------------------- */
 
   (function () {
 
-    var breakLengthMin = 5,
-      sessionLengthMin = 25,
-      interval;
+    var breakLengthMin   = 5,
+        sessionLengthMin = 25,
+        interval;
+
+
+
+    /* ----------------------------------- begin [init functions] ------------------------------------ */
 
     /**
-     * Function getRandomInt - randomly selects a number from the range
-     * @param   {number} min 
-     * @param   {number} max 
-     * @returns {number} return random int number 
-     */
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    /**
-     * Function gradients - set background flat gradient color and realize even keyPress button <left, right>
+     * Function gradients - set background flat gradient color and 
+     * realize even keyPress button <left, right>
      */
     function gradients() {
       // A few gradients for random initialization
@@ -113,6 +109,12 @@ $(document).ready(function () {
       });
     }
 
+    /* ------------------------------------ end [init functions] ------------------------------------- */
+
+
+
+    /* ----------------------------------- begin [utility functions] --------------------------------- */
+
     /**
      * Function startTimer initialize start seconds count and display in DOM
      * @param {number} seconds - set seconds
@@ -169,10 +171,26 @@ $(document).ready(function () {
       var audio = new Audio('./sound/bell_ring.mp3');
       audio.play();
     }
+    
+    /**
+     * Function getRandomInt - randomly selects a number from the range
+     * @param   {number} min 
+     * @param   {number} max 
+     * @returns {number} return random int number 
+     */
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    /* ------------------------------------ end [utility functions] ---------------------------------- */
+
+
+    /* ---------------------------------- begin [start init functions] ------------------------------- */
 
     gradients();
     clickTimer();
 
+    /* ----------------------------------- end [start init functions] -------------------------------- */
 
   })();
 
