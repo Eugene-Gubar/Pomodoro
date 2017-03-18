@@ -84,7 +84,7 @@ window.onload = function () {
 
         /**
          * Function getID - Helper function to retrieve an item by its 'ID'.
-         * @param {string} id 
+         * @param {string} id - Select tag by ID
          */
         function getID(id) {
             return document.getElementById(id);
@@ -92,7 +92,7 @@ window.onload = function () {
 
         /**
          * Function getClass - Helper function to retrieve an item by its 'class'.
-         * @param {string} c 
+         * @param {string} c - Select tag by Class
          */
         function getClass(c) {
             return document.getElementsByClassName(c);
