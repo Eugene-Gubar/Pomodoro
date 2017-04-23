@@ -162,7 +162,7 @@ $(document).ready(function () {
         function startTimer(seconds, element, b) {
             var minutes, seconds, timer = seconds;
             interval = setInterval(function () {
-                minutes = parseInt(timer / 60, 10)
+                minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
 
                 minutes = minutes < 10 ? "0" + minutes : minutes;
