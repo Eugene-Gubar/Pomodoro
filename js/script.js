@@ -39,7 +39,7 @@ $(document).ready(function () {
                     });
                 }
                 setCssGradient(i);
-                $('body').keydown(function (e) {
+                $(window).keydown(function (e) {
                     if (e.which == 37) { // left
                         i <= 0 ? i = 0 : i -= 1;
                         setCssGradient(i);
@@ -68,8 +68,8 @@ $(document).ready(function () {
             });
             /* --------------------------------- click break length - plus ---------------------------------*/
             $('.break-plus').on('click', function (e) {
-                if (breakLengthMin === 60) {
-                    breakLengthMin = 60;
+                if (breakLengthMin === 99) {
+                    breakLengthMin = 99;
                 } else {
                     breakLengthMin += 1;
                 }
@@ -86,8 +86,8 @@ $(document).ready(function () {
             });
             /* --------------------------------- click session length - plus ---------------------------------*/
             $('.session-plus').on('click', function (e) {
-                if (sessionLengthMin === 120) {
-                    sessionLengthMin = 120;
+                if (sessionLengthMin === 99) {
+                    sessionLengthMin = 99;
                 } else {
                     sessionLengthMin += 1;
                 }
@@ -101,6 +101,31 @@ $(document).ready(function () {
                     sessionLengthMin -= 1;
                 }
                 $('.session-minute').text(sessionLengthMin);
+            });
+        }
+
+        function eventPressKey() {
+            var number = '';
+            $(window).keydown(function (e) {
+                number += e.key;
+                if (e.key === 's' || e.key === 'S') {
+                    number = '';
+                    number += e.key;
+                }
+                if (number.length === 3 && (number[0] === 's' ||
+                    number[0] === 'S')  && !isNaN(number.substr(-2))) {
+                    sessionLengthMin = Math.abs(parseInt(number.substr(-2)));
+                    stopTime();
+                    interval = 0;
+                    $('.time').click();
+                    number = '';
+                } else if (number.length >= 3) {
+                    console.log(number);
+                    number = '';
+                }
+                // console.log(e);
+                // console.log(e.which);
+                // console.log(number);
             });
         }
 
@@ -182,6 +207,7 @@ $(document).ready(function () {
 
         /* ---------------------------------- begin [start init functions] ------------------------------- */
 
+        eventPressKey();
         gradients();
         clickTimer();
 
