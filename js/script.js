@@ -7,12 +7,11 @@
 $(document).ready(function () {
 
 
-
     /* ------------------------------- Anonymous [function 'safe scope'] ------------------------------- */
 
     (function () {
 
-        var breakLengthMin = 5,
+        var breakLengthMin   = 5,
             sessionLengthMin = 25,
             interval;
 
@@ -54,7 +53,6 @@ $(document).ready(function () {
 
         /**
          * Function clickTimer set break and session
-         * @param {number} s - interval session seconds
          */
         function clickTimer() {
 
@@ -113,7 +111,7 @@ $(document).ready(function () {
             $(window).keydown(function (e) {
                 number += e.key;
                 bNumber += e.key;
-        /* --------------------------------- press key 's' or 'S' for set start ---------------------------------*/
+            /* --------------------------------- press key 's' or 'S' for set start ---------------------------------*/
                 if (e.key === 's' || e.key === 'S') {
                     number = '';
                     number += e.key;
@@ -131,7 +129,7 @@ $(document).ready(function () {
                     number = '';
                 }
 
-        /* --------------------------------- press key 'b' or 'B' for set break ---------------------------------*/
+            /* --------------------------------- press key 'b' or 'B' for set break ---------------------------------*/
                 if (e.key === 'b' || e.key === 'B') {
                     bNumber = '';
                     bNumber += e.key;
