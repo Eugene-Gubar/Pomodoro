@@ -1,56 +1,85 @@
 body {
-  color: #fff;
-  margin: 0px;
-  padding: 0px;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
 }
 
 .flexbox-container {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  align-items: center;
-  height: 100vh;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .clock {
-  margin: auto;
-  font-family: sans-serif;
+    margin: auto;
+    font-family: sans-serif;
 }
+
 .time {
-  font-size: 35vw;
-  margin: 0px;
-  padding: 0px;
-  cursor: pointer;
+    font-size: 35vw;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
 }
 
 .options {
-  font-size: 3.5vw;
-  width: 88vw;
-}
-.options > div > p {
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
-}
-.options span {
-  font-size: 7vw;
+    font-size: 3.5vw;
+    width: 88vw;
 }
 
-.break-minus, .break-plus, .session-minus, .session-plus {
-  cursor: pointer;
+.options>div>p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
-.break-minute, .session-minute {
-  padding-left: 0.2em;
-  padding-right: 0.2em;
+
+.options span {
+    font-size: 7vw;
 }
+
+.break-minus,
+.break-plus,
+.session-minus,
+.session-plus {
+    cursor: pointer;
+}
+
+.break-minute,
+.session-minute {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
 .break-length {
-  text-align: center;
-  float: left;
+    text-align: center;
+    float: left;
 }
 
 .session-length {
-  text-align: center;
-  float: right;
+    text-align: center;
+    float: right;
 }
+
+
+/* --------------------------------------------------------------------------- */
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+/* --------------------------------------------------------------------------- */
