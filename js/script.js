@@ -1,5 +1,5 @@
 /**
- * Pomodoro: Was created by Jquery
+ * Pomodoro: Was created by JQuery
  * Author:   Eugene Gubar
  */
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
         /* ----------------------------------- begin [init functions] ------------------------------------ */
 
         /**
-         * Function gradients - set background flat gradient color and 
+         * Function gradients set background flat gradient color and 
          * realize even keyPress button <left, right>
          */
         function gradients() {
@@ -104,29 +104,49 @@ $(document).ready(function () {
             });
         }
 
+        /**
+         * Function eventPressKey initialize functional: press key 's','S' for start and press key 'b', 'B' for break 
+         */
         function eventPressKey() {
-            var number = '';
+            var number  = '',
+                bNumber = '';
             $(window).keydown(function (e) {
                 number += e.key;
+                bNumber += e.key;
+        /* --------------------------------- press key 's' or 'S' for set start ---------------------------------*/
                 if (e.key === 's' || e.key === 'S') {
                     number = '';
                     number += e.key;
                 }
+
                 if (number.length === 3 && (number[0] === 's' ||
                     number[0] === 'S')  && !isNaN(number.substr(-2))) {
                     sessionLengthMin = Math.abs(parseInt(number.substr(-2)));
                     stopTime();
                     interval = 0;
                     $('.time').click();
-                    number = '';
+                    $('.session-minute').text(sessionLengthMin);
+                    number = '';     
                 } else if (number.length >= 3) {
-                    console.log(number);
                     number = '';
                 }
-                // console.log(e);
-                // console.log(e.which);
-                // console.log(number);
-            });
+
+        /* --------------------------------- press key 'b' or 'B' for set break ---------------------------------*/
+                if (e.key === 'b' || e.key === 'B') {
+                    bNumber = '';
+                    bNumber += e.key;
+                }
+
+                if (bNumber.length === 3 && (bNumber[0] === 'b' ||
+                    bNumber[0] === 'B')  && !isNaN(bNumber.substr(-2))) {
+                    breakLengthMin = Math.abs(parseInt(bNumber.substr(-2)));
+                    $('.break-minute').text(breakLengthMin);
+                    bNumber = '';     
+                } else if (bNumber.length >= 3) {
+                    bNumber = '';
+                }
+
+            });    
         }
 
         /* ------------------------------------ end [init functions] ------------------------------------- */
