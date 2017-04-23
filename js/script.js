@@ -59,7 +59,6 @@ $(document).ready(function () {
         function clickTimer() {
 
             $('.time').on('click', function (e) {
-                e.preventDefault();
                 if (interval >= 1) {
                     stopTime();
                     interval = 0;
@@ -69,7 +68,6 @@ $(document).ready(function () {
             });
             /* --------------------------------- click break length - plus ---------------------------------*/
             $('.break-plus').on('click', function (e) {
-                e.preventDefault();
                 if (breakLengthMin === 60) {
                     breakLengthMin = 60;
                 } else {
@@ -79,7 +77,6 @@ $(document).ready(function () {
             });
             /* --------------------------------- click break length - minus ---------------------------------*/
             $('.break-minus').on('click', function (e) {
-                e.preventDefault();
                 if (breakLengthMin === 1) {
                     breakLengthMin = 1;
                 } else {
@@ -89,7 +86,6 @@ $(document).ready(function () {
             });
             /* --------------------------------- click session length - plus ---------------------------------*/
             $('.session-plus').on('click', function (e) {
-                e.preventDefault();
                 if (sessionLengthMin === 120) {
                     sessionLengthMin = 120;
                 } else {
@@ -99,7 +95,6 @@ $(document).ready(function () {
             });
             /* --------------------------------- click session length - minus ---------------------------------*/
             $('.session-minus').on('click', function (e) {
-                e.preventDefault();
                 if (sessionLengthMin === 1) {
                     sessionLengthMin = 1;
                 } else {
