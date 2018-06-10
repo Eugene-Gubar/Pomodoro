@@ -7,10 +7,13 @@ body {
 .flexbox-container {
     display: -ms-flexbox;
     display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
     display: flex;
     -ms-flex-align: center;
     -webkit-align-items: center;
     -webkit-box-align: center;
+    -moz-box-align: center;
     align-items: center;
     height: 100vh;
 }
@@ -21,10 +24,11 @@ body {
 }
 
 .time {
-    font-size: 35vw;
+    font-size: 30vw;
     margin: 0px;
     padding: 0px;
     cursor: pointer;
+    text-align: center;
 }
 
 .options {
@@ -72,7 +76,6 @@ body {
     /* iOS Safari */
     -webkit-user-select: none;
     /* Safari */
-    -khtml-user-select: none;
     /* Konqueror HTML */
     -moz-user-select: none;
     /* Firefox */
